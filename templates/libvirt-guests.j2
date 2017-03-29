@@ -1,0 +1,10 @@
+# URIs to check for running guests
+# example: URIS='default xen:/// vbox+tcp://host/system lxc:///'
+#URIS=default
+
+ON_BOOT={{ libvirt_guest_defaults.on_boot }}
+START_DELAY={{ libvirt_guest_defaults.start_delay }}
+ON_SHUTDOWN={{ libvirt_guest_defaults.on_shutdown }}
+PARALLEL_SHUTDOWN={{ libvirt_guest_defaults.parallel_shutdown }}
+SHUTDOWN_TIMEOUT={{ libvirt_guest_defaults.shutdown_timeout }}
+BYPASS_CACHE={{ libvirt_guest_defaults.bypass_cache }}

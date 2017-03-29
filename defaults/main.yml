@@ -1,0 +1,9 @@
+---
+# defaults file for libvirt
+libvirt_guest_defaults:
+  on_boot: ignore
+  start_delay: 0
+  on_shutdown: shutdown
+  parallel_shutdown: 3
+  shutdown_timeout: 300
+  bypass_cache: 0

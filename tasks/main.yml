@@ -1,0 +1,27 @@
+---
+# tasks file for libvirt
+- name: Install libvirt-packages
+  apt: 
+    name: "{{ item }}"
+    state: latest
+    default_release: "{{ ansible_distribution_release }}-backports"
+  with_items:
+      - libvirt-bin
+      - qemu-system
+      - libguestfs-tools
+      - python-libvirt
+      - python-lxml
+
+- name: Enable libvirt services
+  service: 
+    name: "{{ item }}"
+    state: started 
+    enabled: true
+  with_items: 
+      - libvirtd
+      - libvirt-guests
+      
+- name: Template over config
+  template:
+    dest: /etc/default/libvirt-guests
+    src: libvirt-guests.j2
