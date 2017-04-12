@@ -12,6 +12,7 @@
       - python-libvirt
       - python-lxml
       - ovmf
+      - bmap-tools
 
 - name: Enable libvirt services
   service: 
