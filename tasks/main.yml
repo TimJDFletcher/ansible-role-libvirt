@@ -6,13 +6,13 @@
     state: latest
     default_release: "{{ ansible_distribution_release }}-backports"
   with_items:
-      - libvirt-bin
-      - qemu-system
-      - libguestfs-tools
-      - python-libvirt
-      - python-lxml
-      - ovmf
-      - bmap-tools
+    - libvirt-bin
+    - qemu-system
+    - libguestfs-tools
+    - python-libvirt
+    - python-lxml
+    - ovmf
+    - bmap-tools
 
 - name: Enable libvirt services
   service: 
