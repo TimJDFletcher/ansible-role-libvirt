@@ -33,10 +33,18 @@
     dest: /etc/polkit-1/localauthority/50-local.d/60-libvirt.pkla
     src: libvirt.pkla.j2
 
-- name: Set local qemu as the default for local users
+- name: Set local qemu as the default for local users (bash)
   copy:
-    content: "export LIBVIRT_DEFAULT_URI=qemu:////system"
+    content: "export LIBVIRT_DEFAULT_URI=qemu:///system"
     dest: /etc/profile.d/libvirt-default-uri.sh
+    mode: 0644
+    owner: root
+    group: root
+    
+- name: Set local qemu as the default for local users (csh)
+  copy:
+    content: "set LIBVIRT_DEFAULT_URI qemu:///system"
+    dest: /etc/profile.d/libvirt-default-uri.csh
     mode: 0644
     owner: root
     group: root
