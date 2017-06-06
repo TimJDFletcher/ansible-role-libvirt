@@ -35,7 +35,7 @@
 
 - name: Set local qemu as the default for local users
   copy:
-    content: "export LIBVIRT_DEFAULT_URI=qemu://system"
+    content: "export LIBVIRT_DEFAULT_URI=qemu:////system"
     dest: /etc/profile.d/libvirt-default-uri.sh
     mode: 0644
     owner: root
