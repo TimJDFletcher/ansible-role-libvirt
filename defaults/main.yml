@@ -7,3 +7,5 @@ libvirt_guest_defaults:
   parallel_shutdown: 3
   shutdown_timeout: 300
   bypass_cache: 0
+
+libvirt_manager_group: linux-administrators

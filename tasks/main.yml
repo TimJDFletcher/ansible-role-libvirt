@@ -27,3 +27,8 @@
   template:
     dest: /etc/default/libvirt-guests
     src: libvirt-guests.j2
+
+- name: Template over auth
+  template:
+    dest: /etc/polkit-1/localauthority/50-local.d/60-libvirt.pkla
+    src: libvirt.pkla.j2
