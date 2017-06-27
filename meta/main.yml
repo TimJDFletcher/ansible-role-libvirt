@@ -10,7 +10,9 @@ dependencies:
     scm: git
     name: install-apt-repo
     repository: backports
+    version: origin/bi-cluster
   - src: git@github.com:LateRoomsGroup/ansible-role-install-apt-repo.git
     scm: git
     name: install-apt-repo
     repository: non-free
+    version: origin/bi-cluster
