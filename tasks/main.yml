@@ -6,7 +6,7 @@
     state: latest
     default_release: "{{ ansible_distribution_release }}-backports"
   with_items:
-    - libvirt-bin
+    - libvirt-daemon
     - qemu-system
     - libguestfs-tools
     - python-libvirt
