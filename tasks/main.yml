@@ -1,11 +1,12 @@
 ---
 # tasks file for libvirt
 - name: Install libvirt-packages
-  apt: 
-    name: "{{ item }}"
-    state: latest
+  apt:
+    name: "{{ packages }}"
+    state: present
     default_release: "{{ ansible_distribution_release }}-backports"
-  with_items:
+  vars:
+    packages:
     - libvirt-daemon
     - libvirt-daemon-system
     - qemu-system
@@ -16,14 +17,14 @@
     - bmap-tools
 
 - name: Enable libvirt services
-  service: 
+  service:
     name: "{{ item }}"
-    state: started 
+    state: started
     enabled: true
-  with_items: 
+  with_items:
       - libvirtd
       - libvirt-guests
-      
+
 - name: Template over guest config
   template:
     dest: /etc/default/libvirt-guests
@@ -41,7 +42,7 @@
     mode: 0644
     owner: root
     group: root
-    
+
 - name: Set local qemu as the default for local users (csh)
   copy:
     content: "set LIBVIRT_DEFAULT_URI qemu:///system"
